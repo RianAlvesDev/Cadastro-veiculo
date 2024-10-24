@@ -1,13 +1,22 @@
 <template>
-  <p>banner</p>
+  <Banner />
   <div class="main-container">
     <h1>Cadastre seu veículo:</h1>
+  <Formulario />
   </div>
-  <div class="form"><p>formulário</p></div>
 </template>
 
 <script>
-  
+  import Banner from "../components/Banner.vue";
+  import Formulario from "../components/Formulario.vue";
+
+  export default {
+    name: "Home",
+    components: {
+      Banner,
+      Formulario,
+    }
+  }
 </script>
 
 <style scoped>
@@ -15,6 +24,5 @@
     margin: 40px;
     min-height: 399px;
   };
-
 
 </style>
