@@ -12,7 +12,7 @@
                 <label for="carro">Carro:</label>
                 <select name="carro" id="carro" v-model="carro">
                 <option value="">Selecione seu carro</option>
-                <option value="teste">Teste</option>
+                <option v-for="carro in carros" :key="carro.id" :value="carro.tipo">{{ carro.tipo }}</option>
                 </select>
             </div>
             <div class="input-container">
@@ -26,6 +26,29 @@
 <script>
     export default{
         name: "Formulario",
+        data() {
+            return{
+                nome: null,
+                carro: null,
+                carros: null,
+                valor: null,
+                quantidade: null,
+                cod: null,
+                msg: null,
+            }
+        },
+        methods: {
+            async createPeca() {
+                const req = await fetch("http://localhost:3000/pecas_cadastradas");
+                const data =await req.json();
+
+                console.log(data);
+
+            }
+        },
+        mounted() {
+            this.createPeca()
+        }
     }
 
 

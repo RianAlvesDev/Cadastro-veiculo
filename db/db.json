@@ -1,9 +1,9 @@
 
 {
     "pecas_cadastradas": {
-      "modelos": [
+      "tipo": [
         {
-          "id": "argo",
+          "id": "Argo",
           "model": "Fiat Argo"
         },
         {

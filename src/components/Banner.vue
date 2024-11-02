@@ -1,7 +1,7 @@
 <template>
-<div id="main-banner">
-<h1>Cadastre-se</h1>
-</div>
+<!--<div id="main-banner">
+ <h1>Cadastre-se</h1>
+</div>-->
 </template>
 
 <script>
@@ -12,11 +12,11 @@
 
 <style scoped>
 
-    #main-banner{
-        /*background-image: url ... ;*/
+    /* #main-banner{
+        background-image: url ... ;*/
         /*background-position: 0 -250px;*/
         /*background-size: cover;*/
-        height: 500px;
+        /*height: 500px;
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -28,6 +28,6 @@
         font-size: 60px;
         background-color: #222;
         padding: 20px 40px;
-    }
+    }*/
 
 </style>
