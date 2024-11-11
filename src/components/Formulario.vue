@@ -1,20 +1,47 @@
 <template>
 
 <div>
-    <p>Componente de mensagem</p>
+    <Msg :msg="msg" v-show="msg" />
     <div>
-        <form id="form-full">
+        <form id="form-full" @submit="createPeca">
             <div class="input-container">
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" id="nome" v-model="nome" placeholder="Digite seu nome">
             </div>
+            
             <div class="input-container">
                 <label for="carro">Carro:</label>
-                <select name="carro" id="carro" v-model="carro">
-                <option value="">Selecione seu carro</option>
-                <option v-for="carro in carros" :key="carro.id" :value="carro.tipo">{{ carro.tipo }}</option>
-                </select>
+                <input
+            list="carros"
+            id="carro"
+            name="carro"
+            v-model="carro"
+            placeholder="Adicione um veículo"
+            required
+          />
+          
+                <datalist id="carros" required>
+            <option
+              v-for="carro in carros"
+              :key="carro.id"
+              :value="carro.model"
+            >
+              {{ carro.model }}
+            </option>
+          </datalist>
+          
             </div>
+
+            <div class="input-container">
+                
+          <label for="valor">Placa:</label>
+          <input type="text" id="placa" name="placa" v-model="placa" placeholder="Adicione uma placa" required />
+        </div>
+
+
+
+
+
             <div class="input-container">
                 <input type="submit" class="submit-btn" value="Cadastrar!">
             </div>
@@ -24,34 +51,62 @@
 </template>
 
 <script>
-    export default{
-        name: "Formulario",
-        data() {
-            return{
-                nome: null,
-                carro: null,
-                carros: null,
-                valor: null,
-                quantidade: null,
-                cod: null,
-                msg: null,
-            }
-        },
-        methods: {
-            async createPeca() {
-                const req = await fetch("http://localhost:3000/pecas_cadastradas");
-                const data =await req.json();
+    import Msg from "./Msg.vue";
 
-                console.log(data);
+export default {
+  components: {
+    Msg,
+  },
+  name: "PecaFormulario",
+  data() {
+    return {
+      nome: null,
+      carro: null,
+      carros: null,
+      valor: null,
+      quantidade: null,
+      cod: null,
+      msg: null,
+    };
+  },
+  methods: {
+    async getModelos() {
+      const req = await fetch("http://localhost:3000/pecas_cadastradas");
+      const data = await req.json();
 
-            }
-        },
-        mounted() {
-            this.createPeca()
-        }
-    }
+      this.carros = data.modelos;
+    },
+    async createPeca(e) {
+      e.preventDefault();
 
+      const data = {
+        nome: this.nome,
+        carro: this.carro,
+        placa: parseFloat(this.placa),
+      };
+      const dataJson = JSON.stringify(data);
 
+      const req = await fetch("http://localhost:3000/items", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: dataJson,
+      });
+
+      const res = await req.json();
+
+      this.msg = "Peça cadastrata com sucesso!";
+
+      setTimeout(() => (this.msg = ""), 5000);
+
+      this.nome = "";
+      this.carro = "";
+      this.placa = "";
+    },
+  },
+  mounted() {
+    this.getModelos();
+  },
+};
 </script>
 
 <style>
