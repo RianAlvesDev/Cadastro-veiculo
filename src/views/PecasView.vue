@@ -1,16 +1,18 @@
 <template>
   <div class="main-container">
-    <h1>Cadastro</h1>
+    <h1 class="title-banner">Peças Cadastradas</h1>
+    <Cadastradas />
   </div>
 </template>
 
-<style scoped>
-   .main-container {
-    margin: 58px;
-    min-height: 399px;
-  };
-
-
-</style>
+<script>
+import Cadastradas from "../components/Cadastradas.vue";
+export default {
+  name: "Pecas",
+  components: {
+    Cadastradas,
+  },
+};
+</script>
 
 

@@ -1,7 +1,7 @@
 
 <template>
     <footer>
-      <p> &copy; Auto Car 2025</p>
+      <p> &copy; Auto Car  2025</p>
     </footer>
   </template>
   
@@ -13,9 +13,8 @@
   
   <style scoped>
   footer {
-    height: 164px;
-    background: linear-gradient( blue 69% , yellow); 
-    /*background-color: #881caf;*/
+    height: 172px;
+    background-color: rgb(59, 59, 244);
     border-top: 4px solid #2cccda;
     color: #fff;
     display: flex;

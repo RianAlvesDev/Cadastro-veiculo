@@ -61,7 +61,7 @@ export default {
 
       this.msg = "Peça Deletada!";
 
-      setTimeout(() => (this.msg = ""), 5000);
+      setTimeout(() => (this.msg = ""), 3000);
 
       this.getPecas();
     },

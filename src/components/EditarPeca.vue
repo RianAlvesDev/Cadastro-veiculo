@@ -26,24 +26,6 @@
           </datalist>
         </div>
         <div class="input_container">
-          <label for="valor">Valor:</label>
-          <input type="text" id="valor" name="valor" v-model="valor" required />
-        </div>
-        <div class="input_container">
-          <label for="quantidade">Quantidade:</label>
-          <input
-            type="number"
-            id="quantidade"
-            name="quantidade"
-            v-model="quantidade"
-            required
-          />
-        </div>
-        <div class="input_container">
-          <label for="cod">Código:</label>
-          <input type="text" id="cod" name="cod" v-model="cod" required />
-        </div>
-        <div class="input_container">
           <input type="submit" class="submit_btn" value="Editar Peça" />
         </div>
       </form>
@@ -60,9 +42,8 @@ export default {
       nome: "",
       carro: "",
       carros: null,
-      valor: "",
-      quantidade: "",
-      cod: "",
+      placa: "",
+      plcas: null,
       msg: null,
     };
   },
@@ -80,9 +61,7 @@ export default {
         body: JSON.stringify({
           nome: this.nome,
           carro: this.carro,
-          valor: this.valor,
-          quantidade: this.quantidade,
-          cod: this.cod,
+          placa: this.placa,
         }),
       });
 
@@ -96,9 +75,7 @@ export default {
       .then((data) => {
         this.nome = data.nome;
         this.carro = data.carro;
-        this.valor = data.valor;
-        this.quantidade = data.quantidade;
-        this.cod = data.cod;
+        this.placa = data.placa;
       });
     this.getModelos();
   },

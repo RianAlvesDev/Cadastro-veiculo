@@ -15,9 +15,8 @@
   </script>
   
   <style scoped>
-  #nav {
-    background: linear-gradient( blue 43% , yellow); 
-    /*background-color: #881caf;*/
+  #nav { 
+    background-color: rgb(59, 59, 244);
     border-bottom: 4px solid #2cccda;
     padding: 15px 50px;
     display: flex;

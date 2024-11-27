@@ -38,10 +38,6 @@
           <input type="text" id="placa" name="placa" v-model="placa" placeholder="Adicione uma placa" required />
         </div>
 
-
-
-
-
             <div class="input-container">
                 <input type="submit" class="submit-btn" value="Cadastrar!">
             </div>
@@ -63,9 +59,8 @@ export default {
       nome: null,
       carro: null,
       carros: null,
-      valor: null,
-      quantidade: null,
-      cod: null,
+      placa: null,
+      placas: null,
       msg: null,
     };
   },
@@ -82,7 +77,7 @@ export default {
       const data = {
         nome: this.nome,
         carro: this.carro,
-        placa: parseFloat(this.placa),
+        placa: this.placa,
       };
       const dataJson = JSON.stringify(data);
 
@@ -94,9 +89,9 @@ export default {
 
       const res = await req.json();
 
-      this.msg = "Peça cadastrata com sucesso!";
+      this.msg = "Pronto! Sua peça foi cadastrada.";
 
-      setTimeout(() => (this.msg = ""), 5000);
+      setTimeout(() => (this.msg = ""), 3000);
 
       this.nome = "";
       this.carro = "";
