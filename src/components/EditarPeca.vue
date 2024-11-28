@@ -4,7 +4,7 @@
       <form id="peca-form" @submit="updatePeca">
         <div class="input_container">
           <label for="nome">Nome:</label>
-          <input type="text" id="nome" name="nome" v-model="nome" required />
+          <input type="text" id="nome" name="nome" v-model="nome" required/>
         </div>
         <div class="input_container">
           <label for="carro">Carro:</label>
@@ -13,21 +13,24 @@
             id="carro"
             name="carro"
             v-model="carro"
-            required
-          />
+            required/>
           <datalist id="carros" required>
             <option
               v-for="carro in carros"
               :key="carro.id"
-              :value="carro.model"
-            >
+              :value="carro.model">
               {{ carro.model }}
             </option>
           </datalist>
         </div>
         <div class="input_container">
-          <input type="submit" class="submit_btn" value="Editar Peça" />
+          <label for="nome">Placa:</label>
+          <input type="text" id="placa" name="placa" v-model="placa" required/>
         </div>
+        <div class="input_container">
+          <input type="submit" class="submit_btn" value="Editar_Peça"/>
+        </div>
+        
       </form>
     </div>
   </div>

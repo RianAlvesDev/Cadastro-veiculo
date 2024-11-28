@@ -14,7 +14,7 @@
         <tr v-for="peca in pecas" :key="peca.id">
           <td>{{ peca.nome }}</td>
           <td>{{ peca.carro }}</td>
-          <td>{{ peca.Placa }}</td>
+          <td>{{ peca.placa }}</td>
           <td>
             <button class="edit">
               <router-link :to="{ path: '/edit/' + peca.id }" class="link"
@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import { RouterLink } from "vue-router";
 import Msg from "./Msg.vue";
 
 export default {
@@ -42,7 +43,8 @@ export default {
   },
   components: {
     Msg,
-  },
+    RouterLink
+},
   methods: {
     async getPecas() {
       const req = await fetch("http://localhost:3000/items");

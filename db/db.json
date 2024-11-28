@@ -1,6 +1,6 @@
 {
   "pecas_cadastradas": {
-    "tipo": [
+    "modelos": [
       {
         "id": "Argo",
         "model": "Fiat Argo"
@@ -267,24 +267,5 @@
       }
     ]
   },
-  "items": [
-    {
-      "id": "3826",
-      "nome": "RIAN",
-      "carro": "Ford Edge",
-      "placa": "123"
-    },
-    {
-      "id": "c8c6",
-      "nome": "RIAN",
-      "carro": "Fiat Argo",
-      "placa": "123"
-    },
-    {
-      "id": "fac1",
-      "nome": "RIAN",
-      "carro": "a",
-      "placa": "123"
-    }
-  ]
+  "items": []
 }
