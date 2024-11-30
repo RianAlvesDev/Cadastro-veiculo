@@ -19,10 +19,14 @@
   }
 </script>
 
-<style scoped>
+<style >
+  
+
    .main-container {
     margin: 40px;
     min-height: 399px;
+    
   };
 
+  
 </style>

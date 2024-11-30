@@ -14,5 +14,10 @@ export default {
   },
 };
 </script>
+<style scoped>
+  #main-container{
+    text-align: center;
+  }
+</style>
 
 

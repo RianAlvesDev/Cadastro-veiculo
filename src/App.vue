@@ -3,10 +3,7 @@
     <NavBar :logo="carro_src" :alt="name" />
     <Router-View />
     <Footer />
-    
   </header>
-
-  
 </template>
 
 <script>
@@ -25,23 +22,21 @@ export default {
     }
   }
 }
-
 </script>
 
-<style>
+<style scoped>
   * {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    
+    background-color:rgb(248, 240, 227);
   }
-  
+
   h1 {
     text-align: center;
     font-size: 42px;
     margin-bottom: 32px;
     color: #222;
-    
-  };
+  }
 </style>

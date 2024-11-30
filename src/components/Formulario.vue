@@ -1,5 +1,4 @@
 <template>
-
 <div>
     <Msg :msg="msg" v-show="msg" />
     <div>
@@ -105,6 +104,7 @@ export default {
 </script>
 
 <style>
+
 #form-full{
     max-width: 400px;
     margin: 0 auto;
